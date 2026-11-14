@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reproverify"
+version = "1.0.0"
+description = "可复现构建验证工具：双目录构建 + 文件级比对 + 非确定性来源归因"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "reproverify contributors" }]
+keywords = ["reproducible-builds", "supply-chain", "attestation", "verification"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Security",
+]
+# 纯标准库，无运行时依赖
+dependencies = []
+
+[project.scripts]
+reproverify = "reproverify.cli:main"
+
+[tool.setuptools]
+packages = ["reproverify"]
